@@ -13,7 +13,7 @@ function getSplashScreen() {
   return (
     <div className="splash-screen">
       <h1 id="splash-name">{aboutMe.name.toUpperCase()}</h1>
-      <div class="blob"></div>
+      <div className="blob"></div>
       <span id="down-arrow">&#8595;</span>
     </div>
   );
@@ -101,7 +101,7 @@ function getFooter() {
       <a
         target="_blank"
         rel="noopener noreferrer"
-        href="https://github.com/gbaglioni93/personalPage"
+        href="https://github.com/gbaglioni93/personalWebsite"
         id="github-project-link"
       >
         Check it out here

@@ -68,5 +68,5 @@ export const interests = [
 export const contactOptions = [
   { url: "linkedin.com/in/gbaglioni93", name: "Linkedin" },
   { url: "github.com/gbaglioni93", name: "Github" },
-  { ur: "trimmy.co.uk/help", name: "Trimmy" },
+  { url: "trimmy.co.uk/help", name: "Trimmy" },
 ];
