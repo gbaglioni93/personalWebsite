@@ -1,0 +1,20 @@
+.skill-bar {
+  height: 5px;
+  width: 10rem;
+  background-color: #a2a6d4;
+}
+
+.skill-level {
+  background-color: #141a56;
+  height: 5px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+}
+
+.skill p {
+  margin-right: 1rem;
+  width: 4rem;
+}

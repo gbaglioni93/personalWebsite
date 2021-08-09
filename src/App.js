@@ -5,9 +5,14 @@ import {
   education,
   interests,
   jobs,
+  events,
+  skills,
 } from "./res/content";
 import profile from "./res/img/profile_picture.jpg";
 import Experience from "./res/components/Experience";
+import Skill from "./res/components/Skill";
+
+// TODO: Fix the key issue for lists
 
 function getSplashScreen() {
   return (
@@ -23,8 +28,8 @@ function getEducation() {
   return (
     <div className="section">
       <h2>Education</h2>
-      {education.map((edu) => (
-        <Experience data={edu} />
+      {education.map((edu, index) => (
+        <Experience data={edu} key={index} />
       ))}
     </div>
   );
@@ -34,8 +39,8 @@ function getWorkExperience() {
   return (
     <div className="section">
       <h2>Experience</h2>
-      {jobs.map((job) => (
-        <Experience data={job} />
+      {jobs.map((job, index) => (
+        <Experience data={job} key={index} />
       ))}
     </div>
   );
@@ -46,8 +51,10 @@ function getInterests() {
     <div className="section">
       <h2>Interests</h2>
       <ul>
-        {interests.map((interest) => (
-          <li className="list-item">{interest}</li>
+        {interests.map((interest, index) => (
+          <li className="list-item" key={index}>
+            {interest}{" "}
+          </li>
         ))}
       </ul>
     </div>
@@ -58,8 +65,9 @@ function getContactInfo() {
   return (
     <div className="section">
       <h2>Contact</h2>
-      {contactOptions.map((option) => (
+      {contactOptions.map((option, index) => (
         <a
+          key={index}
           target="_blank"
           rel="noopener noreferrer"
           className="website"
@@ -80,7 +88,7 @@ function getProfile() {
           src={profile}
           id="profileImage"
           className="cirlce-image"
-          alt="header image"
+          alt="profile"
         />
       </div>
       <div className="header-content">
@@ -110,6 +118,28 @@ function getFooter() {
   );
 }
 
+function getEvents() {
+  return (
+    <div className="section">
+      <h2>Events</h2>
+      {events.map((event, index) => {
+        return <Experience data={event} key={index} />;
+      })}
+    </div>
+  );
+}
+
+function getSkills() {
+  return (
+    <div className="section">
+      <h2>Skills</h2>
+      {skills.map((skill, index) => {
+        return <Skill data={skill} key={index} />;
+      })}
+    </div>
+  );
+}
+
 function App() {
   return (
     <div className="app">
@@ -119,7 +149,9 @@ function App() {
         {getProfile()}
         {getContactInfo()}
         {getWorkExperience()}
+        {getEvents()}
         {getEducation()}
+        {getSkills()}
         {getInterests()}
         {getFooter()}
       </div>
