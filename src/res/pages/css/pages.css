@@ -45,7 +45,7 @@
 }
 
 .social-button:hover{
-    opacity: 80%;
+    color:#63666A;
     cursor: pointer;
 }
 
@@ -82,7 +82,7 @@
 
 #back-button:hover{
     cursor: pointer;
-    opacity: 90%;
+    color:#63666A;
 }
 
 /* Mobile */
