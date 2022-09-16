@@ -1,0 +1,105 @@
+.page-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 100vh;
+    align-items: stretch;
+}
+
+.page-content{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.page-title{
+    font-family:'Helvetica Neue';
+    font-weight: 300;
+    padding-top: 2rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+#social-media{
+    display: flex;
+    justify-content: center;
+}
+
+.social-button{
+    width: min-content;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    border: none;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.social-button:hover{
+    opacity: 80%;
+    cursor: pointer;
+}
+
+
+.page-footer{
+    padding: 1rem;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Countdown */
+
+#timer{
+    display: flex;
+    margin-bottom: 5rem;
+    justify-content: center;
+}
+
+/* Pictures */
+
+#picture-container{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.circle-img{
+    max-width: 15vw;
+    border-radius: 50%;
+}
+
+#back-button:hover{
+    cursor: pointer;
+    opacity: 90%;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 900px) {
+.page-container{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#social-media{
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle-img{
+    min-width: 30vw;
+}
+
+}

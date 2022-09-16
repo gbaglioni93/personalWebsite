@@ -1,0 +1,33 @@
+.show-counter{
+    display: flex;
+}
+
+.countdown-value{
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    margin: 0.25rem;
+}
+
+#countdown-num{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+@media screen and (max-width: 900px) {
+    #countdown-num{
+        font-size: 1rem;
+    }
+
+#countdown-type{
+font-size: 0.5rem;
+}
+
+
+}
