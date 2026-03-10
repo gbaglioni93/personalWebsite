@@ -130,7 +130,13 @@
   justify-content: center;
   gap: 2rem;
   animation: fadeUp 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  z-index: 10;
+  z-index: 100;
+}
+
+.home-overlay-close {
+  position: absolute;
+  top: calc(env(safe-area-inset-top) + 1.5rem);
+  left: 1.5rem;
 }
 
 .home-overlay a {

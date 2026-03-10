@@ -29,43 +29,53 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="home" ref={homeRef}>
+    <>
+      <div className="home" ref={homeRef}>
 
-      {/* Desktop nav */}
-      <nav className="home-nav home-nav--desktop home-anim home-anim--1">
-        {links.map(({ label, href }) => (
-          <a key={label} href={href} target="_blank" rel="noreferrer">{label}</a>
-        ))}
-      </nav>
+        {/* Desktop nav */}
+        <nav className="home-nav--desktop home-anim home-anim--1">
+          {links.map(({ label, href }) => (
+            <a key={label} href={href} target="_blank" rel="noreferrer">{label}</a>
+          ))}
+        </nav>
 
-      {/* Mobile nav */}
-      <div className="home-nav--mobile home-anim home-anim--1">
-        <button
-          className={`home-menu-btn${menuOpen ? " home-menu-btn--open" : ""}`}
-          onClick={() => setMenuOpen(o => !o)}
-          aria-label="Toggle menu"
-        >
-          <span /><span /><span />
-        </button>
+        {/* Mobile hamburger button */}
+        <div className="home-nav--mobile home-anim home-anim--1">
+          <button
+            className={`home-menu-btn${menuOpen ? " home-menu-btn--open" : ""}`}
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label="Toggle menu"
+          >
+            <span /><span /><span />
+          </button>
+        </div>
 
-        {menuOpen && (
-          <div className="home-overlay">
-            {links.map(({ label, href }) => (
-              <a key={label} href={href} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>
-                {label}
-              </a>
-            ))}
-          </div>
-        )}
+        <h1 className="home-name home-anim home-anim--2">
+          Giorgio<br />Baglioni.
+        </h1>
+
+        <p className="home-bio home-anim home-anim--3">
+          Experienced product leader across fintech, crypto and AI. Based in New York City.
+        </p>
       </div>
 
-      <h1 className="home-name home-anim home-anim--2">
-        Giorgio<br />Baglioni.
-      </h1>
-
-      <p className="home-bio home-anim home-anim--3">
-        Experienced product leader across fintech, crypto and AI. Based in New York City.
-      </p>
-    </div>
+      {/* Full-screen overlay — rendered outside .home to escape overflow:hidden */}
+      {menuOpen && (
+        <div className="home-overlay">
+          <button
+            className="home-menu-btn home-menu-btn--open home-overlay-close"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <span /><span /><span />
+          </button>
+          {links.map(({ label, href }) => (
+            <a key={label} href={href} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>
+              {label}
+            </a>
+          ))}
+        </div>
+      )}
+    </>
   );
 }
