@@ -1,8 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./css/pages.css";
+
+const links = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/gbaglioni93/" },
+  { label: "Twitter",  href: "https://x.com/gbaglioni93" },
+  { label: "Substack", href: "https://substack.com/@gbaglioni" },
+  { label: "GitHub",   href: "https://github.com/gbaglioni93/" },
+];
 
 export default function HomePage() {
   const homeRef = useRef(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const el = homeRef.current;
@@ -22,12 +30,34 @@ export default function HomePage() {
 
   return (
     <div className="home" ref={homeRef}>
-      <nav className="home-nav home-anim home-anim--1">
-        <a href="https://www.linkedin.com/in/gbaglioni93/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://x.com/gbaglioni93" target="_blank" rel="noreferrer">Twitter</a>
-        <a href="https://substack.com/@gbaglioni" target="_blank" rel="noreferrer">Substack</a>
-        <a href="https://github.com/gbaglioni93/" target="_blank" rel="noreferrer">GitHub</a>
+
+      {/* Desktop nav */}
+      <nav className="home-nav home-nav--desktop home-anim home-anim--1">
+        {links.map(({ label, href }) => (
+          <a key={label} href={href} target="_blank" rel="noreferrer">{label}</a>
+        ))}
       </nav>
+
+      {/* Mobile nav */}
+      <div className="home-nav--mobile home-anim home-anim--1">
+        <button
+          className={`home-menu-btn${menuOpen ? " home-menu-btn--open" : ""}`}
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label="Toggle menu"
+        >
+          <span /><span /><span />
+        </button>
+
+        {menuOpen && (
+          <div className="home-dropdown">
+            {links.map(({ label, href }) => (
+              <a key={label} href={href} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>
+                {label}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
 
       <h1 className="home-name home-anim home-anim--2">
         Giorgio<br />Baglioni.

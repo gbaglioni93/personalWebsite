@@ -11,12 +11,23 @@
   }
 }
 
+@keyframes dropDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ── Home Page ── */
 
 .home {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100dvh;
   padding: 2rem 2.5rem 2rem 4rem;
   --glow-x: 50%;
   --glow-y: 50%;
@@ -48,13 +59,14 @@
 .home-anim--2 { animation-delay: 0.3s; }
 .home-anim--3 { animation-delay: 0.5s; }
 
-/* Nav */
-.home-nav {
+/* ── Desktop Nav ── */
+
+.home-nav--desktop {
   display: flex;
   gap: 2rem;
 }
 
-.home-nav a {
+.home-nav--desktop a {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
@@ -64,11 +76,82 @@
   transition: color 0.2s;
 }
 
-.home-nav a:hover {
+.home-nav--desktop a:hover {
   color: #D6CDB3;
 }
 
-/* Name */
+/* ── Mobile Nav ── */
+
+.home-nav--mobile {
+  display: none;
+  position: relative;
+}
+
+.home-menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.home-menu-btn span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: #808F88;
+  border-radius: 2px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.home-menu-btn--open span:nth-child(1) {
+  transform: translateY(7.25px) rotate(45deg);
+}
+.home-menu-btn--open span:nth-child(2) {
+  opacity: 0;
+}
+.home-menu-btn--open span:nth-child(3) {
+  transform: translateY(-7.25px) rotate(-45deg);
+}
+
+.home-dropdown {
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  background: #1e2e28;
+  border: 1px solid rgba(128, 143, 136, 0.2);
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  min-width: 140px;
+  animation: dropDown 0.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 10;
+}
+
+.home-dropdown a {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #808F88;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  padding: 0.6rem 1.2rem;
+  transition: color 0.15s, background 0.15s;
+}
+
+.home-dropdown a:hover {
+  color: #D6CDB3;
+  background: rgba(128, 143, 136, 0.08);
+}
+
+/* ── Name ── */
+
 .home-name {
   margin-top: auto;
   font-family: 'Playfair Display', Georgia, serif;
@@ -80,7 +163,8 @@
   letter-spacing: -0.01em;
 }
 
-/* Subtitle */
+/* ── Bio ── */
+
 .home-bio {
   margin-top: auto;
   max-width: 42ch;
@@ -93,17 +177,19 @@
 }
 
 /* ── Mobile ── */
+
 @media (max-width: 600px) {
   .home {
-    padding: 3rem 1.5rem 1.5rem;
+    padding: calc(env(safe-area-inset-top) + 1.5rem) 1.5rem 1.5rem;
+    min-height: 100dvh;
   }
 
-  .home-nav {
-    gap: 1.25rem;
+  .home-nav--desktop {
+    display: none;
   }
 
-  .home-nav a {
-    font-size: 1rem;
+  .home-nav--mobile {
+    display: block;
   }
 
   .home-name {
