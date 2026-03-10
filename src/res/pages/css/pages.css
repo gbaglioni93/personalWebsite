@@ -154,6 +154,18 @@
   color: #E8E6DC;
 }
 
+/* Bio link */
+.home-bio a {
+  color: #D6CDB3;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(214, 205, 179, 0.3);
+  transition: border-color 0.2s;
+}
+
+.home-bio a:hover {
+  border-color: #D6CDB3;
+}
+
 /* ── Name ── */
 
 .home-name {
