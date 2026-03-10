@@ -95,7 +95,7 @@
 /* ── Mobile ── */
 @media (max-width: 600px) {
   .home {
-    padding: 1.5rem;
+    padding: 3rem 1.5rem 1.5rem;
   }
 
   .home-nav {
