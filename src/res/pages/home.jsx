@@ -55,7 +55,7 @@ export default function HomePage() {
         </h1>
 
         <p className="home-bio home-anim home-anim--3">
-          Head of Product at Very AI. Based in New York City.
+          Head of Product at Very AI.<br />Based in New York City.
         </p>
       </div>
 
