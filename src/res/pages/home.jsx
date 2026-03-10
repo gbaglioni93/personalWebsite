@@ -49,7 +49,7 @@ export default function HomePage() {
         </button>
 
         {menuOpen && (
-          <div className="home-dropdown">
+          <div className="home-overlay">
             {links.map(({ label, href }) => (
               <a key={label} href={href} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>
                 {label}

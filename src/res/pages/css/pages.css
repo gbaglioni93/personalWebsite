@@ -97,6 +97,8 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  position: relative;
+  z-index: 20;
 }
 
 .home-menu-btn span {
@@ -118,36 +120,32 @@
   transform: translateY(-7.25px) rotate(-45deg);
 }
 
-.home-dropdown {
-  position: absolute;
-  top: calc(100% + 1rem);
-  left: 0;
+.home-overlay {
+  position: fixed;
+  inset: 0;
+  background: #1a2420;
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
-  background: #1e2e28;
-  border: 1px solid rgba(128, 143, 136, 0.2);
-  border-radius: 10px;
-  padding: 0.5rem 0;
-  min-width: 140px;
-  animation: dropDown 0.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  animation: fadeUp 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   z-index: 10;
 }
 
-.home-dropdown a {
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
+.home-overlay a {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 2.8rem;
+  font-weight: 400;
   color: #808F88;
   text-decoration: none;
-  letter-spacing: 0.01em;
-  padding: 0.6rem 1.2rem;
-  transition: color 0.15s, background 0.15s;
+  letter-spacing: -0.01em;
+  transition: color 0.2s;
 }
 
-.home-dropdown a:hover {
-  color: #D6CDB3;
-  background: rgba(128, 143, 136, 0.08);
+.home-overlay a:hover {
+  color: #E8E6DC;
 }
 
 /* ── Name ── */
