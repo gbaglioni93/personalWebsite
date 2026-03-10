@@ -1,105 +1,77 @@
-.page-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left: 15%;
-    margin-right: 15%;
-    height: 100vh;
-    align-items: stretch;
+/* ── Home Page ── */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 2rem 2.5rem 2rem 4rem;
 }
 
-.page-content{
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+/* Nav */
+.home-nav {
+  display: flex;
+  gap: 2rem;
 }
 
-.page-title{
-    font-family:'Helvetica Neue';
-    font-weight: 300;
-    padding-top: 2rem;
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
+.home-nav a {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #808F88;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
 }
 
-#social-media{
-    display: flex;
-    justify-content: center;
+.home-nav a:hover {
+  color: #D6CDB3;
 }
 
-.social-button{
-    width: min-content;
-    background-color: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.25rem;
-    border: none;
-    padding: 1rem;
-    margin: 1rem;
+/* Name */
+.home-name {
+  margin-top: auto;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(4.5rem, 13vw, 11rem);
+  line-height: 0.95;
+  color: #E8E6DC;
+  letter-spacing: -0.01em;
 }
 
-.social-button:hover{
-    color:#63666A;
-    cursor: pointer;
+/* Subtitle */
+.home-bio {
+  margin-top: auto;
+  max-width: 42ch;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  line-height: 1.7;
+  color: #808F88;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .home {
+    padding: 1.5rem;
+  }
 
-.page-footer{
-    padding: 1rem;
-    font-size: 0.75rem;
-    display: flex;
-    justify-content: center;
-}
+  .home-nav {
+    gap: 1.25rem;
+  }
 
+  .home-nav a {
+    font-size: 0.85rem;
+  }
 
-/* Countdown */
+  .home-name {
+    font-size: clamp(3.5rem, 18vw, 5.5rem);
+    line-height: 1;
+  }
 
-#timer{
-    display: flex;
-    margin-bottom: 5rem;
-    justify-content: center;
-}
-
-/* Pictures */
-
-#picture-container{
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.circle-img{
-    max-width: 15vw;
-    border-radius: 50%;
-}
-
-#back-button:hover{
-    cursor: pointer;
-    color:#63666A;
-}
-
-/* Mobile */
-
-@media screen and (max-width: 900px) {
-.page-container{
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-#social-media{
-    flex-direction: column;
-    align-items: center;
-}
-
-.circle-img{
-    min-width: 30vw;
-}
-
+  .home-bio {
+    font-size: 0.875rem;
+    max-width: 100%;
+  }
 }
