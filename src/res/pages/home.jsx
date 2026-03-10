@@ -15,7 +15,7 @@ export default function HomePage() {
       </h1>
 
       <p className="home-bio">
-        Experienced product leader across fintech, crypto and AI. Based in New York City, NY.
+        Experienced product leader across fintech, crypto and AI. Based in New York City.
       </p>
     </div>
   );
